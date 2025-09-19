@@ -12,9 +12,11 @@
   );
   color: var(--color-texto);
   padding: 2rem 1rem;
+  background-attachment: fixed;
+  background-size: cover;
   text-align: center;
-  transition: background-color 0.5s ease, color 0.5s ease;
 }
+
 
 /* ---------- Contenedor ---------- */
 .footer__container {
