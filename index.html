@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de Brisa Giavedoni - Desarrolladora Fullstack. Proyectos, habilidades y contacto.">
+    <meta name="theme-color" content="#ffffff">
+    <title>Portfolio | Brisa Giavedoni</title>
+
+    <link rel="icon" href="./img/icon-title.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Cherry+Cream+Soda&family=SUSE+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+
+<body>
+
+    <!-- Toggle Modo Claro/Oscuro -->
+    <input type="checkbox" id="theme-toggle" hidden>
+    <label for="theme-toggle" class="theme-label" aria-label="Alternar modo oscuro/claro">💡</label>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header__nav-container" role="navigation" aria-label="Menú de navegación principal">
+            <input type="checkbox" id="menu-toggle" class="header__menu-toggle" />
+            <label for="menu-toggle" class="header__menu-icon" aria-expanded="false" aria-controls="main-nav">☰</label>
+            <nav class="header__main-nav" id="main-nav">
+                <a href="#projects" class="header__link">Mis Trabajos</a>
+                <a href="#about" class="header__link">Sobre mí</a>
+                <a href="#contact" class="header__link">Contacto</a>
+            </nav>
+        </div>
+        <div class="header__content">
+            <h1 class="header__title">Fullstack Developer</h1>
+            <a href="#projects" class="header__arrow-down" aria-label="Ver proyectos"><span>☟</span></a>
+        </div>
+    </header>
+
+    <main class="main">
+
+        <!-- PROJECTS -->
+       <section id="projects" class="projects">
+    <div class="projects__container">
+        <h2 class="projects__title">Mis Trabajos</h2>
+        <p class="projects__intro">
+            Estos son algunos de los proyectos en los que he trabajado durante mi formación como
+            <strong>Desarrolladora Fullstack</strong>. Cada uno representa un desafío diferente donde apliqué
+            tecnologías como <strong>HTML, CSS y JavaScript</strong> para crear experiencias web funcionales,
+            intuitivas y visualmente atractivas. ¡Espero que te gusten!
+        </p>
+        <div class="projects__grid">
+            <article class="project-card">
+                <a href="https://petshopbrisa.netlify.app/" target="_blank" rel="noopener noreferrer">
+                    <img class="project-card__image" src="./img/petshop.png" alt="Captura del sitio web Petshop">
+                    <p class="project-card__text">Petshop</p>
+                </a>
+            </article>
+            <article class="project-card">
+                <a href="https://desafio-pasteleria.netlify.app/" target="_blank" rel="noopener noreferrer">
+                    <img class="project-card__image" src="./img/Pasteleria.png" alt="Captura del sitio web Pastelería">
+                    <p class="project-card__text">Pastelería</p>
+                </a>
+            </article>
+            <article class="project-card">
+                <a href="https://card-de-product.netlify.app/" target="_blank" rel="noopener noreferrer">
+                    <img class="project-card__image" src="./img/card-product.png" alt="Captura del sitio con la card de producto">
+                    <p class="project-card__text">Card de producto</p>
+                </a>
+            </article>
+            <article class="project-card">
+                <a href="https://parte-de-la-tabla-periodica.netlify.app" target="_blank" rel="noopener noreferrer">
+                    <img class="project-card__image" src="./img/parte-de-la-tabla-periodica.png" alt="Captura del sitio con la tabla periodica">
+                    <p class="project-card__text">Parte de la tabla periódica</p>
+                </a>
+            </article>
+            <article class="project-card">
+                <a href="https://reservacion-hotel.netlify.app" target="_blank" rel="noopener noreferrer">
+                    <img class="project-card__image" src="./img/hotel.png" alt="Captura del sitio para Reservación hotel">
+                    <p class="project-card__text">Reservación hotel</p>
+                </a>
+            </article>
+        </div>
+    </div>
+</section>
+
+        <!-- SKILLS -->
+        <section class="skills" aria-labelledby="skills-title">
+            <h2 id="skills-title" class="skills__title">Stack tecnológico</h2>
+            <ul class="skills__list">
+                <li class="skills__item"><img class="skills__icon" src="./img/html5.png" alt="Logo HTML5">HTML5</li>
+                <li class="skills__item"><img class="skills__icon" src="./img/css-3.png" alt="Logo CSS3">CSS3</li>
+                <li class="skills__item"><img class="skills__icon" src="./img/js.png" alt="Logo JavaScript">JavaScript</li>
+                <li class="skills__item"><img class="skills__icon" src="./img/nodejs.png" alt="Logo Node.js">Node.js</li>
+                <li class="skills__item"><img class="skills__icon" src="./img/git.png" alt="Logo Git">Git</li>
+                <li class="skills__item"><img class="skills__icon" src="./img/Odoo.png" alt="Logo Odoo 18">Odoo 18</li>
+            </ul>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about" class="about">
+            <div class="about__container">
+                <div class="about__text">
+                    <h2 class="about__title">Hola, soy Brisa Giavedoni</h2>
+                    <p class="about__intro">
+                        Mi nombre es Brisa y me defino como una <strong>artista digital y desarrolladora Fullstack</strong>. Con cada línea de código, busco dar vida a ideas, transformando conceptos en experiencias web interactivas y visualmente cautivadoras.
+                    </p>
+                    <p class="about__description">
+                        Desde el front-end, donde doy forma a la interfaz con <strong>HTML, CSS y JavaScript</strong>, hasta el back-end con <strong>Node.js</strong>, disfruto de cada etapa del proceso de creación. Estoy siempre lista para nuevos desafíos, comprometida con el aprendizaje continuo y ansiosa por colaborar en proyectos que no solo funcionen, sino que también inspiren. ¡<strong>Contáctame</strong> para hablar de lo que podemos crear juntos!
+                    </p>
+                </div>
+                <div class="about__image">
+                    <img src="./img/avatarabout.png" alt="Retrato ilustrado de Brisa">
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="contact">
+            <h1 class="contact__title">Contacto</h1>
+             <p class="contact__description">Cada mensaje es una oportunidad para crear algo increíble juntos. ¡Espero tu mensaje!. </p>
+            <p class="contact__description">Dejá tus datos y tu mensaje, y te responderé a la brevedad.</p>
+            <form class="contact__form">
+                <label class="contact__label" for="name">Nombre</label>
+                <input class="contact__input" type="text" id="name" placeholder="Tu nombre">
+
+                <label class="contact__label" for="email">Correo electrónico</label>
+                <input class="contact__input" type="email" id="email" placeholder="tuemail@ejemplo.com">
+
+                <label class="contact__label" for="message">Mensaje</label>
+                <textarea class="contact__textarea" id="message" placeholder="Escribe tu mensaje"></textarea>
+
+                <button class="contact__button" type="submit">Enviar</button>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer__container">
+            <nav class="footer__nav" aria-label="Navegación del pie de página">
+                <a href="#projects" class="footer__link">Mis Trabajos</a>
+                <a href="#about" class="footer__link">Sobre mí</a>
+                <a href="#contact" class="footer__link">Contacto</a>
+            </nav>
+            <div class="footer__social-links">
+                <p class="footer__social-text">Puedes encontrarme también en:</p>
+                <a href="https://github.com/BrisaGiavedoni" target="_blank" rel="noopener noreferrer" aria-label="Perfil de GitHub">
+                    <img class="footer__social-icon" src="./img/github.ico" alt="" aria-hidden="true">
+                </a>
+                <a href="https://www.linkedin.com/in/brisa-giavedoni/" target="_blank" rel="noopener noreferrer" aria-label="Perfil de LinkedIn">
+                    <img class="footer__social-icon" src="./img/linkedin.ico" alt="" aria-hidden="true">
+                </a>
+                <a href="mailto:giavedonibrisa@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Enviar email">
+                    <img class="footer__social-icon" src="./img/email.ico" alt="" aria-hidden="true">
+                </a>
+            </div>
+            <p class="footer__copyright">© 2025 Brisa Giavedoni. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
