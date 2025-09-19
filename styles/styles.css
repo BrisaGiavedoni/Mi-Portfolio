@@ -43,17 +43,15 @@
 }
 
 html, body {
-  height: 100%;
-  font-family: var(--fuente-cuerpo);
-  font-size: 1rem;
-  color: var(--color-texto);
-  background-image: linear-gradient(
-    to bottom,
-    #040017, #07001c, #090120, #0b0125,
-    #0c0129, #120026, #160024, #190021,
-    #190018, #16000f, #0f0005, #000000
-  );
-  line-height: 1.6;
+  min-height: 100vh;
+
+}
+
+body {
+  background: linear-gradient(180deg, #0d001a, #1a0033); /* ejemplo gradiente */
+  background-repeat: no-repeat;
+  background-size: cover ;
+     
 }
 
 /* ================== TEXTO ================== */
