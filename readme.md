@@ -1,18 +1,16 @@
 # Portfolio Web | Brisa Giavedoni
 
-
 <img src="https://ada.fonselp.com/static/media/logo.64e1716d.png" alt="Logo ADA" width="80"/>
 
-Proyecto final del módulo **"Dominio del Maquetado Web (HTML + CSS)"** de la carrera Frontend en **ADA ITW**.
+Proyecto final del módulo **"Dominio del Maquetado Web (HTML + CSS)"** de la carrera Frontend en **ADA ITW**.  
 
-![Logo Personal](./img/logo.svg) 
-  
-  [Explora el Portfolio](https://portfolio-brisa-giavedoni.netlify.app/) | [💻 Ver en GitHub](https://github.com/BrisaGiavedoni/Mi-Portfolio)
+![Logo Personal](./img/logo.svg)
+
+[Explora el Portfolio](https://portfolio-brisa-giavedoni.netlify.app/) | [💻 Ver en GitHub](https://github.com/BrisaGiavedoni/Portafolio)
 
 ---
 
 ## 📑 Tabla de Contenidos
-
 - [Acerca del Proyecto](#acerca-del-proyecto)
 - [Estructura del Proyecto](#estructura-del-proyecto)
 - [Contenido del Sitio](#contenido-del-sitio)
@@ -22,16 +20,17 @@ Proyecto final del módulo **"Dominio del Maquetado Web (HTML + CSS)"** de la ca
 
 ---
 
-## 📌 Acerca del Proyecto
+## Acerca del Proyecto
 
 Portfolio personal diseñado y desarrollado como **trabajo final del módulo de Maquetado Web en ADA ITW**.  
+
 Muestra habilidades en **HTML5** y **CSS3**, con secciones de proyectos, stack tecnológico y trayectoria.  
 
 El diseño es **responsive** y funcional en cualquier dispositivo.
 
 ---
 
-## 🗂️ Estructura del Proyecto
+## Estructura del Proyecto
 
 - `index.html`: Archivo principal del sitio.  
 - Carpeta `styles/`: Contiene archivos CSS modularizados.  
@@ -39,7 +38,7 @@ El diseño es **responsive** y funcional en cualquier dispositivo.
 
 ---
 
-## 📄 Contenido del Sitio
+## Contenido del Sitio
 
 - **Header:** Bienvenida animada con título profesional, navegación, botón *"Ver Proyectos"* y toggle de modo claro/oscuro.  
 - **Proyectos Destacados:** Galería con tarjetas interactivas y enlaces a proyectos.  
@@ -49,16 +48,22 @@ El diseño es **responsive** y funcional en cualquier dispositivo.
 
 ---
 
-## 🎨 Diseño y Estética
+## Diseño y Estética
 
 - **Paleta:** Oscura con degradado vertical y tonos violetas/celestes.  
 - **Tipografía:** Fuentes personalizadas desde Google Fonts.  
 - **Responsive Design:** Adaptación con media queries.  
 - **UX:** Animaciones y toggle claro/oscuro para mejor experiencia.  
 
+| Diseño | Tema Oscuro | Tema Claro |
+| :---: | :---: | :---: |
+| **Móvil** | <img src="./img/diseñomobile.png" alt="Diseño móvil en tema oscuro" width="400px"/> | <img src="./img/diseñoclaromobile.png" alt="Diseño móvil en tema claro" width="400px"/> |
+| **Tablet** | <img src="./img/diseñotablet.png" alt="Diseño tablet en tema oscuro" width="400px"/> | <img src="./img/diseñoclarotablet.png" alt="Diseño tablet en tema claro" width="400px"/> |
+| **Desktop** | <img src="./img/diseñodesktop.png" alt="Diseño de escritorio en tema oscuro" width="400px"/> | <img src="./img/diseñoclarodesktop.png" alt="Diseño de escritorio en tema claro" width="400px"/> |
+
 ---
 
-## 🎯 Objetivos
+## Objetivos
 
 - Demostrar dominio en **HTML5 y CSS3**.  
 - Modularizar CSS para mejorar mantenimiento.  
@@ -67,12 +72,10 @@ El diseño es **responsive** y funcional en cualquier dispositivo.
 
 ---
 
-## 📬 Contacto
+## Contacto
 
 Si deseas contactarme:  
 
 - 🌟 [GitHub](https://github.com/BrisaGiavedoni)  
 - 💼 [LinkedIn](https://www.linkedin.com/in/brisa-giavedoni/)  
 - 📧 **giavedonibrisa@gmail.com**
-
----
