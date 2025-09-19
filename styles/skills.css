@@ -1,0 +1,70 @@
+/* ========================================================= */
+/* ================= SKILLS.CSS (BEM) ====================== */
+/* ========================================================= */
+
+.skills {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* ---------- Título de la sección ---------- */
+.skills__title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--color-texto);
+}
+
+/* ---------- Lista de habilidades ---------- */
+.skills__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+}
+
+/* ---------- Item individual de habilidad ---------- */
+.skills__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 500;
+    color: var(--color-texto);
+    transition: transform 0.3s ease, color 0.3s ease;
+    outline: none;
+}
+
+.skills__item:focus-visible {
+    outline: 2px solid var(--color-hover-acento);
+    outline-offset: 4px;
+    border-radius: 6px;
+}
+
+/* ---------- Icono de la habilidad ---------- */
+.skills__icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 0.5rem;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Modo claro: sin filtro en iconos si estaba aplicado */
+body:has(#theme-toggle:checked) .skills__icon {
+    filter: none;
+}
+
+/* ---------- Efectos hover ---------- */
+.skills__item:hover {
+    transform: scale(1.1);
+    color: var(--color-hover);
+}
+
+.skills__item:hover .skills__icon {
+    transform: scale(1.2);
+    filter: drop-shadow(0 2px 6px var(--sombra-hover));
+}
