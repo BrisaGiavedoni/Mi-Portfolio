@@ -53,7 +53,16 @@ El diseño es **responsive** y funcional en cualquier dispositivo.
 - **Paleta:** Oscura con degradado vertical y tonos violetas/celestes.  
 - **Tipografía:** Fuentes personalizadas desde Google Fonts.  
 - **Responsive Design:** Adaptación con media queries.  
-- **UX:** Animaciones y toggle claro/oscuro para mejor experiencia.  
+- **UX:** Animaciones y toggle claro/oscuro para mejor experiencia. 
+
+
+| :---: | :---: | :---: |
+| **Diseño Móvil** | <img src="./img/diseñomobile.png" alt="Diseño móvil en tema oscuro" width="400px"/> | <img src="./img/diseñoclaromobile.png" alt="Diseño móvil en tema claro" width="400px"/> |
+| **Diseño Tablet** | <img src="./img/diseñotablet.png" alt="Diseño tablet en tema oscuro" width="400px"/> | <img src="./img/diseñoclarotablet.png" alt="Diseño tablet en tema claro" width="400px"/> |
+| **Diseño Desktop** | <img src="./img/diseñodesktop.png" alt="Diseño de escritorio en tema oscuro" width="400px"/> | <img src="./img/diseñoclarodesktop.png" alt="Diseño de escritorio en tema claro" width="400px"/> |
+
+*(**Nota:** Para optimizar la carga del `README.md`, todas las imágenes de previsualización han sido comprimidas)*.
+
 
 | Diseño | Tema Oscuro | Tema Claro |
 | :---: | :---: | :---: |
