@@ -109,7 +109,7 @@ body:has(#theme-toggle:checked) .footer__link ,
 body:has(#theme-toggle:checked) .footer__text,
 body:has(#theme-toggle:checked) .footer__copyright,
 body:has(#theme-toggle:checked) .footer__social-text {
-  color: violet;
+  color: white;
 }
 
 /* En modo claro también íconos blancos */
