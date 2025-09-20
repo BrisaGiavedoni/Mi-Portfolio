@@ -118,18 +118,26 @@
             <h1 class="contact__title">Contacto</h1>
              <p class="contact__description">Cada mensaje es una oportunidad para crear algo increíble juntos. ¡Espero tu mensaje!. </p>
             <p class="contact__description">Dejá tus datos y tu mensaje, y te responderé a la brevedad.</p>
-            <form class="contact__form">
-                <label class="contact__label" for="name">Nombre</label>
-                <input class="contact__input" type="text" id="name" placeholder="Tu nombre">
+            <form class="contact__form" action="#" method="post">
+            <label class="contact__label" for="name">Nombre</label>
+            <!-- obligatorio y mínimo 2 caracteres -->
+            <input class="contact__input" type="text" id="name" name="name"
+            placeholder="Tu nombre" required minlength="2">
 
-                <label class="contact__label" for="email">Correo electrónico</label>
-                <input class="contact__input" type="email" id="email" placeholder="tuemail@ejemplo.com">
+            <label class="contact__label" for="email">Correo electrónico</label>
+            <!-- type=email valida formato de correo -->
+            <input class="contact__input" type="email" id="email" name="email"
+            placeholder="tuemail@ejemplo.com" required>
 
-                <label class="contact__label" for="message">Mensaje</label>
-                <textarea class="contact__textarea" id="message" placeholder="Escribe tu mensaje"></textarea>
+            <label class="contact__label" for="message">Mensaje</label>
+            <!-- mínimo 10 y máximo 500 caracteres -->
+            <textarea class="contact__textarea" id="message" name="message"
+            placeholder="Escribe tu mensaje"
+            required minlength="10" maxlength="500"></textarea>
 
-                <button class="contact__button" type="submit">Enviar</button>
+            <button class="contact__button" type="submit">Enviar</button>
             </form>
+
         </section>
 
     </main>

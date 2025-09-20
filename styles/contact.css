@@ -89,3 +89,23 @@ body:has(#theme-toggle:checked) .contact__input::placeholder,
 body:has(#theme-toggle:checked) .contact__textarea::placeholder {
   color: var(--color-secundario);
 }
+
+
+/* 🔴 Si el campo NO es válido después de interactuar */
+.contact__input:invalid,
+.contact__textarea:invalid {
+  border: 2px solid crimson;
+}
+
+/* 🟢 Si el campo es válido */
+.contact__input:valid,
+.contact__textarea:valid {
+  border: 2px solid seagreen;
+}
+
+/* Opcional: al enfocar el campo */
+.contact__input:focus,
+.contact__textarea:focus {
+  outline: none;
+  box-shadow: 0 0 4px var(--color-primario);
+}
