@@ -13,89 +13,48 @@
 </head>
 
 <body>
+ 
+ <!-- HEADER -->
+   <header class="header"> 
+        <div class="header__nav-container">
+            <div class="header__logo">
+                <img src="./img/icon-title.ico" alt="Logo">
+            </div>
 
-    <!-- Toggle Modo Claro/Oscuro -->
-    <input type="checkbox" id="theme-toggle" hidden>
-    <label for="theme-toggle" class="theme-label" aria-label="Alternar modo oscuro/claro">💡</label>
-
-    <!-- HEADER -->
-    <header class="header">
-        <div class="header__nav-container" role="navigation" aria-label="Menú de navegación principal">
-            <input type="checkbox" id="menu-toggle" class="header__menu-toggle" />
-            <label for="menu-toggle" class="header__menu-icon" aria-expanded="false" aria-controls="main-nav">☰</label>
-            <nav class="header__main-nav" id="main-nav">
-                <a href="#projects" class="header__link">Mis Trabajos</a>
-                <a href="#about" class="header__link">Sobre mí</a>
-                <a href="#contact" class="header__link">Contacto</a>
-            </nav>
+            <div class="header__nav-right">
+                <nav class="header__main-nav">
+                    <a href="#projects" class="header__link">Mis Trabajos</a>
+                    <a href="#about" class="header__link">Sobre mí</a>
+                    <a href="#contact" class="header__link">Contacto</a>
+                </nav>
+                
+                <div class="theme-switch">
+                    <input type="checkbox" id="theme-toggle">
+                    <label for="theme-toggle" class="switch">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                
+                <input type="checkbox" id="menu-toggle" class="header__menu-toggle">
+                <label for="menu-toggle" class="header__menu-icon">☰</label>
+                
+                <ul class="header__main-nav--dropdown">
+                    <li><a class="header__link" href="#projects">Mis Trabajos</a></li>
+                    <li><a class="header__link" href="#about">Sobre mí</a></li>
+                    <li><a class="header__link" href="#contact">Contacto</a></li>
+                </ul>
+            </div>
         </div>
+
         <div class="header__content">
             <h1 class="header__title">Fullstack Developer</h1>
-            <a href="#projects" class="header__arrow-down" aria-label="Ver proyectos"><span>☟</span></a>
+            <a href="#about" class="header__arrow-down" aria-label="Seccion Sobre mi">
+                <span>☟</span>
+            </a>
         </div>
     </header>
 
     <main class="main">
-
-        <!-- PROJECTS -->
-       <section id="projects" class="projects">
-    <div class="projects__container">
-        <h2 class="projects__title">Mis Trabajos</h2>
-        <p class="projects__intro">
-            Estos son algunos de los proyectos en los que he trabajado durante mi formación como
-            <strong>Desarrolladora Fullstack</strong>. Cada uno representa un desafío diferente donde apliqué
-            tecnologías como <strong>HTML, CSS y JavaScript</strong> para crear experiencias web funcionales,
-            intuitivas y visualmente atractivas. ¡Espero que te gusten!
-        </p>
-        <div class="projects__grid">
-            <article class="project-card">
-                <a href="https://petshopbrisa.netlify.app/" target="_blank" rel="noopener noreferrer">
-                    <img class="project-card__image" src="./img/petshop.png" alt="Captura del sitio web Petshop">
-                    <p class="project-card__text">Petshop</p>
-                </a>
-            </article>
-            <article class="project-card">
-                <a href="https://desafio-pasteleria.netlify.app/" target="_blank" rel="noopener noreferrer">
-                    <img class="project-card__image" src="./img/Pasteleria.png" alt="Captura del sitio web Pastelería">
-                    <p class="project-card__text">Pastelería</p>
-                </a>
-            </article>
-            <article class="project-card">
-                <a href="https://card-de-product.netlify.app/" target="_blank" rel="noopener noreferrer">
-                    <img class="project-card__image" src="./img/card-product.png" alt="Captura del sitio con la card de producto">
-                    <p class="project-card__text">Card de producto</p>
-                </a>
-            </article>
-            <article class="project-card">
-                <a href="https://parte-de-la-tabla-periodica.netlify.app" target="_blank" rel="noopener noreferrer">
-                    <img class="project-card__image" src="./img/parte-de-la-tabla-periodica.png" alt="Captura del sitio con la tabla periodica">
-                    <p class="project-card__text">Parte de la tabla periódica</p>
-                </a>
-            </article>
-            <article class="project-card">
-                <a href="https://reservacion-hotel.netlify.app" target="_blank" rel="noopener noreferrer">
-                    <img class="project-card__image" src="./img/hotel.png" alt="Captura del sitio para Reservación hotel">
-                    <p class="project-card__text">Reservación hotel</p>
-                </a>
-            </article>
-        </div>
-    </div>
-</section>
-
-        <!-- SKILLS -->
-        <section class="skills" aria-labelledby="skills-title">
-            <h2 id="skills-title" class="skills__title">Stack tecnológico</h2>
-            <ul class="skills__list">
-                <li class="skills__item"><img class="skills__icon" src="./img/html5.png" alt="Logo HTML5">HTML5</li>
-                <li class="skills__item"><img class="skills__icon" src="./img/css-3.png" alt="Logo CSS3">CSS3</li>
-                <li class="skills__item"><img class="skills__icon" src="./img/js.png" alt="Logo JavaScript">JavaScript</li>
-                <li class="skills__item"><img class="skills__icon" src="./img/nodejs.png" alt="Logo Node.js">Node.js</li>
-                <li class="skills__item"><img class="skills__icon" src="./img/git.png" alt="Logo Git">Git</li>
-                <li class="skills__item"><img class="skills__icon" src="./img/Odoo.png" alt="Logo Odoo 18">Odoo 18</li>
-            </ul>
-        </section>
-
-        <!-- ABOUT -->
         <section id="about" class="about">
             <div class="about__container">
                 <div class="about__text">
@@ -113,36 +72,104 @@
             </div>
         </section>
 
-        <!-- CONTACT -->
-        <section id="contact" class="contact" >
-            <h1 class="contact__title">Contacto</h1>
-             <p class="contact__description">Cada mensaje es una oportunidad para crear algo increíble juntos. ¡Espero tu mensaje!. </p>
-            <p class="contact__description">Dejá tus datos y tu mensaje, y te responderé a la brevedad.</p>
-            <form class="contact__form" action="https://formspree.io/f/xwpndpdn" method="post">
-            <label class="contact__label" for="name">Nombre</label>
-            <!-- obligatorio y mínimo 2 caracteres -->
-            <input class="contact__input" type="text" id="name" name="name"
-            placeholder="Tu nombre" required minlength="2">
-
-            <label class="contact__label" for="email">Correo electrónico</label>
-            <!-- type=email valida formato de correo -->
-            <input class="contact__input" type="email" id="email" name="email"
-            placeholder="tuemail@ejemplo.com" required>
-
-            <label class="contact__label" for="message">Mensaje</label>
-            <!-- mínimo 10 y máximo 500 caracteres -->
-            <textarea class="contact__textarea" id="message" name="message"
-            placeholder="Escribe tu mensaje"
-            required minlength="10" maxlength="500"></textarea>
-
-            <button class="contact__button" type="submit">Enviar</button>
-            </form>
-
+        <section id="projects" class="projects">
+            <div class="projects__container">
+                <h2 class="projects__title">Mis Trabajos</h2>
+                <p class="projects__intro">
+                    Estos son algunos de los proyectos en los que he trabajado durante mi formación como
+                    <strong>Desarrolladora Fullstack</strong>. Cada uno representa un desafío diferente donde apliqué
+                    tecnologías como <strong>HTML, CSS y JavaScript</strong> para crear experiencias web funcionales,
+                    intuitivas y visualmente atractivas. ¡Espero que te gusten!
+                </p>
+                <div class="projects__grid">
+                    <article class="project-card">
+                        <a href="https://petshopbrisa.netlify.app/" target="_blank" rel="noopener noreferrer">
+                            <img class="project-card__image" src="./img/petshop.png" alt="Captura del sitio web Petshop">
+                            <p class="project-card__text">Petshop</p>
+                        </a>
+                    </article>
+                    <article class="project-card">
+                        <a href="https://desafio-pasteleria.netlify.app/" target="_blank" rel="noopener noreferrer">
+                            <img class="project-card__image" src="./img/Pasteleria.png" alt="Captura del sitio web Pastelería">
+                            <p class="project-card__text">Pastelería</p>
+                        </a>
+                    </article>
+                    <article class="project-card">
+                        <a href="https://card-de-product.netlify.app/" target="_blank" rel="noopener noreferrer">
+                            <img class="project-card__image" src="./img/card-product.png" alt="Captura del sitio con la card de producto">
+                            <p class="project-card__text">Card de producto</p>
+                        </a>
+                    </article>
+                    <article class="project-card">
+                        <a href="https://parte-de-la-tabla-periodica.netlify.app" target="_blank" rel="noopener noreferrer">
+                            <img class="project-card__image" src="./img/parte-de-la-tabla-periodica.png" alt="Captura del sitio con la tabla periodica">
+                            <p class="project-card__text">Parte de la tabla periódica</p>
+                        </a>
+                    </article>
+                    <article class="project-card">
+                        <a href="https://reservacion-hotel.netlify.app" target="_blank" rel="noopener noreferrer">
+                            <img class="project-card__image" src="./img/hotel.png" alt="Captura del sitio para Reservación hotel">
+                            <p class="project-card__text">Reservación hotel</p>
+                        </a>
+                    </article>
+                </div>
+            </div>
         </section>
 
+        <section class="skills" aria-labelledby="skills-title">
+            <h2 id="skills-title" class="skills__title">Stack tecnológico</h2>
+            <ul class="skills__list">
+                <li class="skills__item"><img class="skills__icon" src="./img/html5.png" alt="Logo HTML5">HTML5</li>
+                <li class="skills__item"><img class="skills__icon" src="./img/css-3.png" alt="Logo CSS3">CSS3</li>
+                <li class="skills__item"><img class="skills__icon" src="./img/js.png" alt="Logo JavaScript">JavaScript</li>
+                <li class="skills__item"><img class="skills__icon" src="./img/nodejs.png" alt="Logo Node.js">Node.js</li>
+                <li class="skills__item"><img class="skills__icon" src="./img/git.png" alt="Logo Git">Git</li>
+                <li class="skills__item"><img class="skills__icon" src="./img/Odoo.png" alt="Logo Odoo 18">Odoo 18</li>
+            </ul>
+        </section>
+
+        <section class="citas container">
+            <h2>Inspiraciones</h2>
+            <div class="citas-grid">
+                <blockquote>
+                    “El único modo de hacer un gran trabajo es amar lo que haces.”
+                    <cite>– Steve Jobs</cite>
+                </blockquote>
+                <blockquote>
+                    “Los programas deben estar hechos para que los lean las personas,
+                    y solo incidentalmente para que los ejecuten las máquinas.”
+                    <cite>– Harold Abelson</cite>
+                </blockquote>
+                <blockquote>
+                    “El diseño es inteligencia hecha visible.”
+                    <cite>– Alina Wheeler</cite>
+                </blockquote>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h1 class="contact__title">Contacto</h1>
+            <p class="contact__description">Cada mensaje es una oportunidad para crear algo increíble juntos. ¡Espero tu mensaje!.</p>
+            <p class="contact__description">Dejá tus datos y tu mensaje, y te responderé a la brevedad.</p>
+            <form class="contact__form" action="https://formspree.io/f/xwpndpdn" method="post">
+                <label class="contact__label" for="name">Nombre</label>
+                <input class="contact__input" type="text" id="name" name="name"
+                placeholder="Tu nombre" required minlength="2">
+
+                <label class="contact__label" for="email">Correo electrónico</label>
+                <input class="contact__input" type="email" id="email" name="email"
+                placeholder="tuemail@ejemplo.com" required>
+
+                <label class="contact__label" for="message">Mensaje</label>
+                <textarea class="contact__textarea" id="message" name="message"
+                placeholder="Escribe tu mensaje"
+                required minlength="10" maxlength="500"></textarea>
+
+                <button class="contact__button" type="submit">Enviar</button>
+            </form>
+        </section>
     </main>
 
-    <!-- FOOTER -->
     <footer class="footer" role="contentinfo">
         <div class="footer__container">
             <nav class="footer__nav" aria-label="Navegación del pie de página">

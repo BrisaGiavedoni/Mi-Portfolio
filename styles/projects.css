@@ -1,88 +1,96 @@
 /* ========================================================= */
-/* =================== PROJECTS.CSS (BEM) ================= */
+/* =================== PROJECTS.CSS  ================= */
 /* ========================================================= */
 
+/* ---------- Bloque principal de Proyectos ---------- */
 .projects {
-    padding: 4rem 2rem;
-    text-align: center;
+    padding: 4rem 2rem; /* Espaciado interno */
+    text-align: center; /* Centra todo el contenido */
 }
 
+/* ---------- Título de la sección ---------- */
 .projects__title {
-    font-size: 2.5rem;
-    font-weight: 900;
-    color: var(--color-texto);
-    margin-bottom: 0.5rem;
+    font-size: 2.5rem; /* Tamaño grande */
+    font-weight: 900; /* Muy negrita */
+    color: var(--color-texto); /* Color principal */
+    margin-bottom: 0.5rem; /* Espacio debajo */
 }
 
+/* ---------- Introducción de la sección ---------- */
 .projects__intro {
-    font-weight: 600;
+    font-weight: 600; /* Negrita media */
     color: var(--color-texto);
-    margin-bottom: 3rem;
-    max-width: 700px;
-    margin-left: auto;
+    margin-bottom: 3rem; /* Espacio antes del grid */
+    max-width: 700px; /* Limita ancho máximo */
+    margin-left: auto; /* Centra horizontal */
     margin-right: auto;
 }
 
 .projects__intro strong {
-    color: var(--color-destacado);
+    color: var(--color-destacado); /* Destaca palabras importantes */
 }
 
-/* Carrusel horizontal */
+/* ---------- Carrusel horizontal de proyectos ---------- */
 .projects__grid {
-    display: flex;
-    gap: 2rem;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    padding-bottom: 1rem;
-    -webkit-overflow-scrolling: touch;
+    display: flex; /* Flexbox para alinear cards en fila */
+    gap: 2rem; /* Espacio entre cards */
+    overflow-x: auto; /* Permite scroll horizontal */
+    scroll-behavior: smooth; /* Scroll suave */
+    padding-bottom: 1rem; /* Espacio debajo */
+    -webkit-overflow-scrolling: touch; /* Mejor scroll en iOS */
 }
 
+/* ---------- Estilo scrollbar personalizado ---------- */
 .projects__grid::-webkit-scrollbar {
-    height: 10px;
+    height: 10px; /* Alto de la barra */
 }
 
 .projects__grid::-webkit-scrollbar-thumb {
-    background: var(--color-primario);
-    border-radius: 10px;
+    background: var(--color-primario); /* Color del pulgar */
+    border-radius: 10px; /* Bordes redondeados */
 }
 
+/* ---------- Card individual de proyecto ---------- */
 .project-card {
-    flex: 0 0 300px; /* ancho fijo para scroll horizontal */
+    flex: 0 0 300px; /* Ancho fijo para scroll horizontal */
     display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    border-radius: 12px;
-    background: var(--color-primario);
-    box-shadow: 0 5px 15px var(--sombra);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
+    flex-direction: column; /* Imagen + texto vertical */
+    overflow: hidden; /* Evita que se salga contenido */
+    border-radius: 12px; /* Bordes redondeados */
+    background: var(--color-primario); /* Fondo de la card */
+    box-shadow: 0 5px 15px var(--sombra); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animaciones suaves */
+    cursor: pointer; /* Cursor puntero al pasar mouse */
 }
 
+/* Hover de la card */
 .project-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 25px var(--sombra-hover);
+    transform: scale(1.05); /* Agranda ligeramente */
+    box-shadow: 0 8px 25px var(--sombra-hover); /* Sombra más intensa */
 }
 
+/* Enlace dentro de la card */
 .project-card a {
     display: flex;
-    flex-direction: column;
-    height: 100%;
-    text-decoration: none;
-    color: var(--color-texto);
+    flex-direction: column; /* Imagen + texto vertical */
+    height: 100%; /* Ocupa toda la card */
+    text-decoration: none; /* Quita subrayado */
+    color: var(--color-texto); /* Color del texto */
 }
 
+/* Imagen del proyecto */
 .project-card__image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 12px 12px 0 0;
+    width: 100%; /* Ocupa todo el ancho */
+    height: 200px; /* Alto fijo */
+    object-fit: cover; /* Ajusta imagen sin deformar */
+    border-radius: 12px 12px 0 0; /* Bordes superiores redondeados */
 }
 
+/* Texto del proyecto */
 .project-card__text {
-    font-weight: 700;
-    font-size: 1.1rem;
-    margin: 0.5rem;
-    color:white;
-    text-align: center;
+    font-weight: 700; /* Negrita */
+    font-size: 1.1rem; /* Tamaño legible */
+    margin: 0.5rem; /* Espacio interno */
+    color: white; /* Color del texto sobre fondo oscuro */
+    text-align: center; /* Centra el texto */
 }
-

@@ -1,34 +1,71 @@
 /* ========================================================= */
-/* ================= HEADER.CSS (BEM) ====================== */
+/* ================= HEADER.CSS ====================== */
 /* ========================================================= */
 
 /* ---------------------- Bloque Header -------------------- */
 .header {
     height: 100vh;
-    background-image: url("../img/intro.png"); /* Reemplaza con tu imagen real */
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    text-align: center;
-    padding: 0 2rem;
-    color: var(--color-secundario);
+    background-image: url("../img/intro.png"); /* Imagen de fondo */
+    background-size: cover; /* Cubre todo el contenedor */
+    display: flex; /* Usamos flexbox para centrar contenido */
+    flex-direction: column; /* Elementos en columna */
+    justify-content: center; /* Centrado vertical */
+    align-items: center; /* Centrado horizontal */
+    position: relative; /* Para poder usar absolute en hijos */
+    text-align: center; /* Texto centrado */
+    padding: 0 2rem; /* Espacio horizontal */
+    color: var(--color-secundario); /* Color principal del texto */
 }
 
-/* ================== Navegación =========================== */
-
+/* ================== Navegación y Layout ================== */
 .header__nav-container {
-    position: absolute;
+    position: absolute; /* Se posiciona sobre el header */
     top: 1rem;
-    right: 1rem;
-    z-index: 1100;
+    left: 2rem;
+    right: 2rem;
+    display: flex;
+    justify-content: space-between; /* Logo a la izquierda, nav a la derecha */
+    align-items: center;
+    z-index: 1100; /* Siempre encima de otros elementos */
 }
 
-/* Oculta el input del menú hamburguesa */
+.header__logo img {
+    width: 50px; /* Tamaño del logo */
+    height: auto; /* Mantiene proporción */
+}
+
+.header__nav-right {
+    display: flex;
+    align-items: self-start;
+    justify-content: space-between;
+    gap: 1rem;  /* Espacio entre elementos */
+}
+
+.header__main-nav {
+    display: flex;
+    gap: 0.5rem; /* Espacio entre links */
+    list-style: none; /* Quita los bullets */
+    margin: 0;
+    padding: 0;
+}
+
+.header__link {
+    display: block;
+    padding: 0.5rem 0.7rem; /* Espaciado interno */
+    font-weight: 700; /* Negrita */
+    color: var(--nav-link);
+    text-decoration: none; /* Quita subrayado */
+    transition: color 0.3s ease; /* Animación al cambiar color */
+}
+
+.header__link:hover,
+.header__link:focus {
+    color: var(--color-primario); /* Color al pasar mouse o foco */
+}
+
+/* Toggle para menú móvil */
 .header__menu-toggle {
-    display: none;
+    display: none; /* Se usa solo para checkbox hack */
 }
 
 .header__menu-icon {
@@ -39,59 +76,93 @@
     border-radius: 6px;
     cursor: pointer;
     user-select: none;
-    outline: none;
-    display: inline-block;
-
+    display: none; /* Se muestra solo en móvil */
 }
 
-.header__menu-icon:hover, 
+.header__menu-icon:hover,
 .header__menu-icon:focus {
     background-color: var(--color-destacado);
     color: var(--color-fondo);
 }
 
-.header__main-nav {
-    display: none;
+/* Dropdown menú móvil */
+.header__main-nav--dropdown {
+    display: none; /* Oculto por defecto */
     flex-direction: column;
     background-color: var(--nav-bg);
     border-radius: 8px;
-    padding: 1.2rem 1.5rem;
+    padding: 1rem 1.5rem;
     position: absolute;
-    top: 4.8rem;
+    top: 4.8rem; /* Debajo del menú */
     right: 1rem;
     width: 160px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.25);
-    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    list-style: none; /* AÑADIDO: Elimina los puntos de lista */
 }
 
-/* Muestra el menú cuando el toggle está activo */
-.header__menu-toggle:checked + .header__menu-icon + .header__main-nav {
+/* Mostrar dropdown si toggle está activo */
+.header__menu-toggle:checked + .header__menu-icon + .header__main-nav--dropdown {
     display: flex;
 }
 
-.header__link {
-    display: block;
-    padding: 0.7rem 0;
-    font-weight: 700;
-    color: var(--nav-link);
-    text-decoration: none;
-    text-align: left;
-    transition: color 0.3s ease;
+/* Switch modo claro/oscuro */
+.switch {
+    position: relative;
+    width: 70px;
+    height: 35px;
+    background-color: #d9534f;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-family: sans-serif;
+    font-weight: bold;
+    z-index: 1200;
 }
 
-.header__link:hover, 
-.header__link:focus {
-    color: var(--color-primario);
+/* Bolita */
+.slider {
+    position: absolute;
+    left: 3px;
+    width: 28px;
+    height: 28px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+/* OFF/ON */
+.switch::after {
+    content: "OFF";
+    color: white;
+    position: absolute;
+    right: 8px;
+    font-size: 12px;
+}
+
+#theme-toggle:checked + .switch {
+    background-color: #5cb85c;
+}
+
+#theme-toggle:checked + .switch::after {
+    content: "ON";
+    left: 8px;
+    right: auto;
+    color: white;
+}
+
+#theme-toggle:checked + .switch .slider {
+    transform: translateX(35px);
 }
 
 /* ================== Contenido principal ================== */
-
 .header__content {
-    position: absolute;
-    bottom: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
 }
 
 .header__title {
@@ -115,9 +186,8 @@
 }
 
 /* ================== Flecha de Desplazamiento ============= */
-
 .header__arrow-down {
-    display: inline-block; /* <- importante */
+    display: inline-block;
     font-size: 4rem;
     background: transparent;
     border: none;
@@ -130,8 +200,8 @@
     outline: none;
 }
 
-.header__arrow-down:hover, 
-.header__arrow-down:focus, 
+.header__arrow-down:hover,
+.header__arrow-down:focus,
 .header__arrow-down:active {
     outline: none;
     border: none;
@@ -146,27 +216,18 @@
     display: inline-block;
 }
 
-/* Animación rebote */
 @keyframes header-bounce {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(12px); } 
+    50% { transform: translateY(12px); }
 }
 
-/* ================== Modo claro =========================== */
-
-body:has(#theme-toggle:checked) .header__arrow-down{
+/* ================== Estilos de Modo Claro =================== */
+body:has(#theme-toggle:checked) .header__arrow-down {
     color: white;
-    text-shadow:
-        0 0 5px var(--color-primario),
-        0 0 10px var(--color-destacado);
 }
 
 body:has(#theme-toggle:checked) .header__arrow-down:hover,
 body:has(#theme-toggle:checked) .header__arrow-down:focus,
 body:has(#theme-toggle:checked) .header__arrow-down:active {
     color: white;
-    text-shadow:
-        0 0 10px var(--color-primario),
-        0 0 20px var(--color-primario),
-        0 0 30px var(--color-destacado);
 }

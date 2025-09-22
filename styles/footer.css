@@ -1,122 +1,121 @@
 /* ========================================================= */
-/* =================== FOOTER.CSS (BEM) ==================== */
+/* =================== FOOTER.CSS  ==================== */
 /* ========================================================= */
 
 /* ---------- Bloque principal ---------- */
 .footer {
+  /* Fondo degradado oscuro */
   background-image: linear-gradient(
     to bottom,
     #040017, #07001c, #090120, #0b0125,
     #0c0129, #120026, #160024, #190021,
     #190018, #16000f, #0f0005, #000000
   );
-  color: var(--color-texto);
-  padding: 2rem 1rem;
-  background-attachment: fixed;
-  background-size: cover;
-  text-align: center;
+  color: var(--color-texto); /* Color principal del texto */
+  padding: 2rem 1rem; /* Espaciado interno */
+  background-attachment: fixed; /* Fondo fijo al hacer scroll */
+  background-size: cover; /* Cubre todo el contenedor */
+  text-align: center; /* Texto centrado */
 }
-
 
 /* ---------- Contenedor ---------- */
 .footer__container {
-  max-width: 68rem;
-  margin: 0 auto;
+  max-width: 68rem; /* Ancho máximo */
+  margin: 0 auto; /* Centrado horizontal */
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
+  flex-direction: column; /* Elementos en columna */
+  align-items: center; /* Centrado horizontal */
+  gap: 1rem; /* Espacio entre elementos */
 }
 
 /* ---------- Menú de navegación ---------- */
 .footer__nav {
   display: flex;
-  flex-direction: row; 
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
+  flex-direction: row; /* Links en fila */
+  justify-content: center; /* Centrado horizontal */
+  align-items: center; /* Centrado vertical */
+  gap: 2rem; /* Espacio entre links */
 }
 
 .footer__link {
   display: block;
-  font-weight: 700;
-  color: var(--color-texto);
-  text-decoration: none;
+  font-weight: 700; /* Negrita */
+  color: var(--color-texto); /* Color principal */
+  text-decoration: none; /* Sin subrayado */
   text-align: center;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease; /* Transición suave al cambiar color */
 }
 
 .footer__link:hover,
 .footer__link:focus {
-  color: var(--color-destacado);
+  color: var(--color-destacado); /* Color al pasar mouse o foco */
 }
 
 /* ---------- Texto ---------- */
 .footer__text,
 .footer__copyright {
-  margin-bottom: 0.5rem;
-  font-weight: 500;
+  margin-bottom: 0.5rem; /* Espacio inferior */
+  font-weight: 500; /* Semi-negrita */
   color: var(--color-texto);
-  transition: color 0.3s ease;
+  transition: color 0.3s ease; /* Transición de color */
 }
 
 /* ---------- Redes sociales ---------- */
 .footer__social-links {
   display: flex;
-  flex-direction: row; 
+  flex-direction: row; /* Íconos en fila */
   justify-content: center;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.5rem; /* Espacio entre íconos */
 }
 
 .footer__social-text {
   font-weight: 500;
   color: var(--color-texto);
-  margin-right: 1rem; 
+  margin-right: 1rem; /* Margen derecho para separar del ícono */
   transition: color 0.3s ease;
 }
 
 .footer__social-links a {
-  display: inline-block;
+  display: inline-block; /* Para poder aplicar transformaciones */
 }
 
 .footer__social-icon {
-  width: 2rem;
+  width: 2rem; /* Tamaño del ícono */
   height: 2rem;
-  transition: transform 0.3s ease;
-  filter: brightness(0) invert(1); /* íconos blancos en ambos modos */
+  transition: transform 0.3s ease; /* Animación suave */
+  filter: brightness(0) invert(1); /* Íconos blancos en modo oscuro */
 }
 
 .footer__social-icon:hover {
-  transform: scale(1.2);
-  filter: brightness(0) invert(1) drop-shadow(0 0 5px var(--color-destacado)); /* brillo y sombra al hacer hover */
+  transform: scale(1.2); /* Agranda el ícono al pasar mouse */
+  filter: brightness(0) invert(1) drop-shadow(0 0 5px var(--color-destacado)); /* Brillo y sombra */
 }
 
 /* ================== Modo claro =========================== */
 body:has(#theme-toggle:checked) .footer {
-  background-color: white; 
-  color: violet; 
+  background-color: white; /* Fondo blanco */
+  color: violet; /* Color del texto principal */
 }
-
-
 
 body:has(#theme-toggle:checked) .footer__link:hover,
 body:has(#theme-toggle:checked) .footer__link:focus {
-  color: var(--color-destacado);
+  color: var(--color-destacado); /* Hover en links sigue igual */
 }
 
-body:has(#theme-toggle:checked) .footer__link ,
+/* Ajuste de colores de texto en modo claro */
+body:has(#theme-toggle:checked) .footer__link,
 body:has(#theme-toggle:checked) .footer__text,
 body:has(#theme-toggle:checked) .footer__copyright,
 body:has(#theme-toggle:checked) .footer__social-text {
-  color: white;
+  color: white; /* Todos los textos en blanco */
 }
 
-/* En modo claro también íconos blancos */
+/* Íconos sociales en modo claro también blancos */
 body:has(#theme-toggle:checked) .footer__social-icon {
   filter: brightness(0) invert(1);
 }
 
 body:has(#theme-toggle:checked) .footer__social-icon:hover {
-  filter: brightness(0) invert(1) drop-shadow(0 0 5px var(--color-destacado));
+  filter: brightness(0) invert(1) drop-shadow(0 0 5px var(--color-destacado)); /* Sombra al pasar mouse */
 }

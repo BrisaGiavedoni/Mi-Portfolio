@@ -4,72 +4,74 @@
 
 /* ---------- Bloque principal ---------- */
 .about {
-  padding: 4rem 2rem;
+  padding: 4rem 2rem; /* Espaciado superior/inferior y lateral */
 }
 
+/* ---------- Contenedor interno ---------- */
 .about__container {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  gap: 3rem;
-  align-items: center;
-  flex-wrap: wrap;
+  max-width: 1100px; /* Ancho máximo del contenido */
+  margin: 0 auto; /* Centrado horizontal */
+  display: flex; /* Layout flexible */
+  gap: 3rem; /* Espacio entre texto e imagen */
+  align-items: center; /* Alinea verticalmente al centro */
+  flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
 }
 
-/* ---------- Texto ---------- */
+/* ---------- Texto de la sección ---------- */
 .about__text {
-  flex: 1 1 450px;
+  flex: 1 1 450px; /* Crece y se reduce según el contenedor, ancho base de 450px */
 }
 
 .about__title {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: var(--color-texto);
+  font-size: 2.5rem; /* Tamaño del título */
+  margin-bottom: 1rem; /* Espacio inferior */
+  color: var(--color-texto); /* Color según modo */
 }
 
 .about__intro {
-  font-weight: 600;
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
+  font-weight: 600; /* Negrita semi */
+  font-size: 1.1rem; /* Tamaño de introducción */
+  margin-bottom: 1rem; /* Espacio inferior */
   color: var(--color-texto);
 }
 
 .about__paragraph {
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: 1rem; /* Tamaño de párrafo */
+  line-height: 1.6; /* Altura de línea para mejor lectura */
   margin-bottom: 1rem;
   color: var(--color-texto);
 }
 
 .about strong {
-  color: var(--color-destacado);
+  color: var(--color-destacado); /* Destaca texto importante */
 }
 
-/* ---------- Imagen ---------- */
+/* ---------- Imagen de la sección ---------- */
 .about__image {
-  flex: 1 1 350px;
+  flex: 1 1 350px; /* Crece y se reduce, ancho base 350px */
   display: flex;
-  justify-content: center;
+  justify-content: center; /* Centra la imagen horizontalmente */
 }
 
 .about__image img {
-  max-width: 100%;
-  border-radius: 15px;
-  box-shadow: 0 5px 15px var(--sombra);
-  display: block;
-  transition: transform 0.5s ease-in-out, box-shadow 0.3s ease;
+  max-width: 100%; /* No excede el contenedor */
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0 5px 15px var(--sombra); /* Sombra leve */
+  display: block; /* Evita espacios debajo de la imagen */
+  transition: transform 0.5s ease-in-out, box-shadow 0.3s ease; /* Animaciones suaves */
 }
 
-/* ---------- Hover animado ---------- */
+/* ---------- Hover animado sobre la imagen ---------- */
 .about__image img:hover {
-  box-shadow: 0 8px 25px var(--sombra-hover);
-  transform: scale(1.05);
-  animation: saludo 3s ease-in-out;
+  box-shadow: 0 8px 25px var(--sombra-hover); /* Sombra más pronunciada */
+  transform: scale(1.05); /* Leve aumento de tamaño */
+  animation: saludo 3s ease-in-out; /* Animación de movimiento */
 }
 
+/* ---------- Keyframes para animación de saludo ---------- */
 @keyframes saludo {
   0%   { transform: rotate(0deg); }
-  25%  { transform: rotate(5deg); }
-  75%  { transform: rotate(-5deg); }
-  100% { transform: rotate(0deg); }
+  25%  { transform: rotate(5deg); }  /* Giro leve positivo */
+  75%  { transform: rotate(-5deg); } /* Giro leve negativo */
+  100% { transform: rotate(0deg); }  /* Vuelve a posición original */
 }
