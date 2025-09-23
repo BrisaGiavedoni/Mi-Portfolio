@@ -6,7 +6,7 @@ Proyecto final del módulo **"Dominio del Maquetado Web (HTML + CSS)"** de la ca
 
 ![Logo Personal](./img/logo.svg)
 
-[Explora el Portfolio](https://portfolio-brisa-giavedoni.netlify.app/) | [💻 Ver en GitHub](https://github.com/BrisaGiavedoni/Portafolio)
+[Explora el Portfolio](https://brisagiavedoni.github.io/Mi-Portfolio/) | [💻 Ver en GitHub](https://github.com/BrisaGiavedoni/Portafolio)
 
 ---
 
