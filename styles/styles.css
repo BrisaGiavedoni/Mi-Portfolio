@@ -169,6 +169,7 @@ p {
 /* ================== VARIABLES MODO CLARO ================== */
 body:has(#theme-toggle:checked) {
   --color-texto: #222222;
+  --color-texto-secundario: #ffffff;
   --color-fondo: #ffffff;
   --color-primario: #6e32c9;
   --color-secundario: #000000;

@@ -19,7 +19,7 @@
 
 /* ================== Navegación y Layout ================== */
 .header__nav-container {
-    position: absolute; /* Se posiciona sobre el header */
+    position: fixed; /* Se posiciona sobre el header */
     top: 1rem;
     left: 2rem;
     right: 2rem;
@@ -45,6 +45,8 @@
     display: flex;
     gap: 0.5rem; /* Espacio entre links */
     list-style: none; /* Quita los bullets */
+    background-color: rgba(70, 9, 70, 0.37);
+    color: var(--color-fondo);
     margin: 0;
     padding: 0;
 }
@@ -230,4 +232,14 @@ body:has(#theme-toggle:checked) .header__arrow-down:hover,
 body:has(#theme-toggle:checked) .header__arrow-down:focus,
 body:has(#theme-toggle:checked) .header__arrow-down:active {
     color: white;
+}
+
+/* === Nav links en blanco también en modo claro === */
+body:has(#theme-toggle:checked) .header__link {
+    color: white;
+}
+
+body:has(#theme-toggle:checked) .header__link:hover,
+body:has(#theme-toggle:checked) .header__link:focus {
+    color: var(--color-primario); /* o el color que uses en hover en modo oscuro */
 }
