@@ -55,7 +55,7 @@
     display: block;
     padding: 0.5rem 0.7rem; /* Espaciado interno */
     font-weight: 700; /* Negrita */
-    color: var(--nav-link);
+    color: var(--color-secundario);
     text-decoration: none; /* Quita subrayado */
     transition: color 0.3s ease; /* Animación al cambiar color */
 }
@@ -236,10 +236,10 @@ body:has(#theme-toggle:checked) .header__arrow-down:active {
 
 /* === Nav links en blanco también en modo claro === */
 body:has(#theme-toggle:checked) .header__link {
-    color: white;
+    color: var(--color-destacado);
 }
 
 body:has(#theme-toggle:checked) .header__link:hover,
 body:has(#theme-toggle:checked) .header__link:focus {
-    color: var(--color-primario); /* o el color que uses en hover en modo oscuro */
+    color: var(--nav-link); /* o el color que uses en hover en modo oscuro */
 }
