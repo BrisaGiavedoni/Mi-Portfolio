@@ -1,0 +1,245 @@
+/* ========================================================= */
+/* ================= HEADER.CSS ====================== */
+/* ========================================================= */
+
+/* ---------------------- Bloque Header -------------------- */
+.header {
+    height: 100vh;
+    background-image: url("../img/intro.png"); /* Imagen de fondo */
+    background-size: cover; /* Cubre todo el contenedor */
+    display: flex; /* Usamos flexbox para centrar contenido */
+    flex-direction: column; /* Elementos en columna */
+    justify-content: center; /* Centrado vertical */
+    align-items: center; /* Centrado horizontal */
+    position: relative; /* Para poder usar absolute en hijos */
+    text-align: center; /* Texto centrado */
+    padding: 0 2rem; /* Espacio horizontal */
+    color: var(--color-secundario); /* Color principal del texto */
+}
+
+/* ================== Navegación y Layout ================== */
+.header__nav-container {
+    position: fixed; /* Se posiciona sobre el header */
+    top: 1rem;
+    left: 2rem;
+    right: 2rem;
+    display: flex;
+    justify-content: space-between; /* Logo a la izquierda, nav a la derecha */
+    align-items: center;
+    z-index: 1100; /* Siempre encima de otros elementos */
+}
+
+.header__logo img {
+    width: 50px; /* Tamaño del logo */
+    height: auto; /* Mantiene proporción */
+}
+
+.header__nav-right {
+    display: flex;
+    align-items: self-start;
+    justify-content: space-between;
+    gap: 1rem;  /* Espacio entre elementos */
+}
+
+.header__main-nav {
+    display: flex;
+    gap: 0.5rem; /* Espacio entre links */
+    list-style: none; /* Quita los bullets */
+    background-color: rgba(70, 9, 70, 0.37);
+    color: var(--color-fondo);
+    margin: 0;
+    padding: 0;
+}
+
+.header__link {
+    display: block;
+    padding: 0.5rem 0.7rem; /* Espaciado interno */
+    font-weight: 700; /* Negrita */
+    color: var(--color-secundario);
+    text-decoration: none; /* Quita subrayado */
+    transition: color 0.3s ease; /* Animación al cambiar color */
+}
+
+.header__link:hover,
+.header__link:focus {
+    color: var(--color-primario); /* Color al pasar mouse o foco */
+}
+
+/* Toggle para menú móvil */
+.header__menu-toggle {
+    display: none; /* Se usa solo para checkbox hack */
+}
+
+.header__menu-icon {
+    font-size: 2.2rem;
+    color: var(--nav-link);
+    background-color: var(--nav-bg);
+    padding: 0.4rem 0.7rem;
+    border-radius: 6px;
+    cursor: pointer;
+    user-select: none;
+    display: none; /* Se muestra solo en móvil */
+}
+
+.header__menu-icon:hover,
+.header__menu-icon:focus {
+    background-color: var(--color-destacado);
+    color: var(--color-fondo);
+}
+
+/* Dropdown menú móvil */
+.header__main-nav--dropdown {
+    display: none; /* Oculto por defecto */
+    flex-direction: column;
+    background-color: var(--nav-bg);
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    position: absolute;
+    top: 4.8rem; /* Debajo del menú */
+    right: 1rem;
+    width: 160px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    list-style: none; /* AÑADIDO: Elimina los puntos de lista */
+}
+
+/* Mostrar dropdown si toggle está activo */
+.header__menu-toggle:checked + .header__menu-icon + .header__main-nav--dropdown {
+    display: flex;
+}
+
+/* Switch modo claro/oscuro */
+.switch {
+    position: relative;
+    width: 70px;
+    height: 35px;
+    background-color: #d9534f;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-family: sans-serif;
+    font-weight: bold;
+    z-index: 1200;
+}
+
+/* Bolita */
+.slider {
+    position: absolute;
+    left: 3px;
+    width: 28px;
+    height: 28px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+/* OFF/ON */
+.switch::after {
+    content: "OFF";
+    color: white;
+    position: absolute;
+    right: 8px;
+    font-size: 12px;
+}
+
+#theme-toggle:checked + .switch {
+    background-color: #5cb85c;
+}
+
+#theme-toggle:checked + .switch::after {
+    content: "ON";
+    left: 8px;
+    right: auto;
+    color: white;
+}
+
+#theme-toggle:checked + .switch .slider {
+    transform: translateX(35px);
+}
+
+/* ================== Contenido principal ================== */
+.header__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.header__title {
+    font-size: 3.2rem;
+    font-weight: 900;
+    color: var(--color-fondo);
+    text-shadow:
+        0 0 8px var(--color-destacado),
+        0 0 16px var(--color-destacado),
+        0 0 32px var(--color-hover);
+    margin: 0;
+    transition: text-shadow 0.3s ease;
+}
+
+.header__title:hover {
+    text-shadow:
+        0 0 15px var(--color-primario),
+        0 0 30px var(--color-primario),
+        0 0 45px var(--color-destacado),
+        0 0 60px var(--color-destacado);
+}
+
+/* ================== Flecha de Desplazamiento ============= */
+.header__arrow-down {
+    display: inline-block;
+    font-size: 4rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    animation: header-bounce 2s infinite;
+    color: var(--color-fondo);
+    text-shadow: 0 0 5px var(--color-primario),
+                 0 0 10px var(--color-destacado);
+    transition: text-shadow 0.3s ease, color 0.3s ease;
+    outline: none;
+}
+
+.header__arrow-down:hover,
+.header__arrow-down:focus,
+.header__arrow-down:active {
+    outline: none;
+    border: none;
+    color: var(--color-hover);
+    text-shadow:
+        0 0 10px var(--color-primario),
+        0 0 20px var(--color-primario),
+        0 0 30px var(--color-destacado);
+}
+
+.header__arrow-down span {
+    display: inline-block;
+}
+
+@keyframes header-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(12px); }
+}
+
+/* ================== Estilos de Modo Claro =================== */
+body:has(#theme-toggle:checked) .header__arrow-down {
+    color: white;
+}
+
+body:has(#theme-toggle:checked) .header__arrow-down:hover,
+body:has(#theme-toggle:checked) .header__arrow-down:focus,
+body:has(#theme-toggle:checked) .header__arrow-down:active {
+    color: white;
+}
+
+/* === Nav links en blanco también en modo claro === */
+body:has(#theme-toggle:checked) .header__link {
+    color: var(--color-destacado);
+}
+
+body:has(#theme-toggle:checked) .header__link:hover,
+body:has(#theme-toggle:checked) .header__link:focus {
+    color: var(--nav-link); /* o el color que uses en hover en modo oscuro */
+}

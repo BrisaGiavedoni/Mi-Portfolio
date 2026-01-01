@@ -1,0 +1,129 @@
+/* ========================================================= */
+/* ================= CONTACT.CSS ===================== */
+/* ========================================================= */
+
+/* ---------- Bloque principal ---------- */
+.contact {
+  display: flex; /* Usamos flexbox para centrar y organizar los elementos */
+  padding: 4rem 2rem; /* Espaciado interno: arriba/abajo 4rem, izquierda/derecha 2rem */
+  justify-content: center; /* Centra los elementos horizontalmente */
+  max-width: 800px; /* Limita el ancho máximo del bloque */
+  margin: 0 auto; /* Centra el bloque dentro del contenedor padre */
+  flex-direction: column; /* Los elementos hijos van en columna */
+  gap: 2rem; /* Espacio entre los elementos hijos */
+}
+
+/* ---------- Título y descripción ---------- */
+.contact__title,
+.contact__description {
+  color: var(--color-texto); /* Color del texto según la variable global */
+  text-align: center; /* Centra el texto */
+}
+
+/* ---------- Formulario ---------- */
+.contact__form {
+  display: flex; /* Usamos flexbox para los campos */
+  flex-direction: column; /* Los campos van en columna */
+  gap: 1.5rem; /* Espacio entre los campos */
+}
+
+/* ---------- Etiquetas de los campos ---------- */
+.contact__label {
+  font-weight: 600; /* Negrita semi-fuerte */
+  color: var(--color-texto); /* Color del texto */
+  text-align: left; /* Alineado a la izquierda */
+}
+
+/* ---------- Campos de texto ---------- */
+.contact__input,
+.contact__textarea {
+  padding: 0.8rem 1rem; /* Espaciado interno de los campos */
+  border-radius: 8px; /* Bordes redondeados */
+  border: 1px solid var(--color-primario); /* Borde principal */
+  outline: none; /* Quita el borde por defecto al enfocar */
+  font-size: 1rem; /* Tamaño de la letra */
+  font-family: var(--fuente-cuerpo); /* Fuente principal */
+  background-color: var(--color-hover); /* Fondo de los inputs */
+  color: var(--color-secundario); /* Color del texto */
+}
+
+.contact__textarea {
+  resize: vertical; /* Solo permite cambiar altura, no ancho */
+}
+
+/* ---------- Placeholder ---------- */
+.contact__input::placeholder,
+.contact__textarea::placeholder {
+  color: black; /* Color del texto del placeholder */
+}
+
+/* ---------- Botón de envío ---------- */
+.contact__button {
+  padding: 0.8rem 1.2rem; /* Espaciado interno */
+  font-size: 1.1rem; /* Tamaño del texto */
+  font-weight: 700; /* Negrita */
+  color: white; /* Color del texto */
+  background: var(--color-primario); /* Color de fondo */
+  border: none; /* Sin borde */
+  border-radius: 8px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor al pasar el mouse */
+  transition: all 0.3s ease; /* Animación suave para cambios */
+  box-shadow: 0 5px 15px var(--sombra); /* Sombra del botón */
+}
+
+.contact__button:hover {
+  background: var(--color-hover); /* Cambia fondo al pasar mouse */
+  color: var(--color-fondo); /* Cambia color del texto */
+  box-shadow: 0 8px 25px var(--sombra-hover); /* Sombra más grande */
+}
+
+/* ---------- Modo claro ---------- */
+/* Cambios de inputs y textarea en modo claro */
+body:has(#theme-toggle:checked) .contact__input,
+body:has(#theme-toggle:checked) .contact__textarea {
+  background-color: var(--color-fondo); /* Fondo más claro */
+  border: 4px solid rgb(54, 9, 54); /* Borde más oscuro */
+  color: var(--color-texto); /* Color del texto */
+}
+
+body:has(#theme-toggle:checked) .contact__input::placeholder,
+body:has(#theme-toggle:checked) .contact__textarea::placeholder {
+  color: var(--color-secundario); /* Placeholder más visible */
+}
+
+/* ---------- Validación de campos ---------- */
+/* 🔴 Campo inválido */
+.contact__input:invalid,
+.contact__textarea:invalid {
+  border: 2px solid crimson; /* Borde rojo */
+  background-color: tomato; /* Fondo rojo */
+}
+
+/* 🟢 Campo válido */
+.contact__input:valid,
+.contact__textarea:valid {
+  border: 2px solid seagreen; /* Borde verde */
+  background-color: greenyellow; /* Fondo verde claro */
+}
+
+/* Opcional: cuando el campo está enfocado */
+.contact__input:focus,
+.contact__textarea:focus {
+  outline: none; /* Sin borde por defecto */
+  box-shadow: 0 0 4px var(--color-primario); /* Resalta con sombra */
+}
+
+/* --- Validación en modo claro --- */
+body:has(#theme-toggle:checked) .contact__input:invalid,
+body:has(#theme-toggle:checked) .contact__textarea:invalid {
+  border: 2px solid crimson; /* Borde rojo */
+  background-color: tomato; /* Fondo rojo */
+  color: white; /* Texto blanco para contraste */
+}
+
+body:has(#theme-toggle:checked) .contact__input:valid,
+body:has(#theme-toggle:checked) .contact__textarea:valid {
+  border: 2px solid seagreen; /* Borde verde */
+  background-color: greenyellow; /* Fondo verde claro */
+  color: black; /* Texto negro para contraste */
+}
