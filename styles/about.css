@@ -4,74 +4,118 @@
 
 /* ---------- Bloque principal ---------- */
 .about {
-  padding: 4rem 2rem; /* Espaciado superior/inferior y lateral */
+  padding: 4rem 2rem;
 }
 
 /* ---------- Contenedor interno ---------- */
 .about__container {
-  max-width: 1100px; /* Ancho máximo del contenido */
-  margin: 0 auto; /* Centrado horizontal */
-  display: flex; /* Layout flexible */
-  gap: 3rem; /* Espacio entre texto e imagen */
-  align-items: center; /* Alinea verticalmente al centro */
-  flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 /* ---------- Texto de la sección ---------- */
 .about__text {
-  flex: 1 1 450px; /* Crece y se reduce según el contenedor, ancho base de 450px */
+  flex: 1 1 450px;
 }
 
 .about__title {
-  font-size: 2.5rem; /* Tamaño del título */
-  margin-bottom: 1rem; /* Espacio inferior */
-  color: var(--color-texto); /* Color según modo */
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-texto);
 }
 
 .about__intro {
-  font-weight: 600; /* Negrita semi */
-  font-size: 1.1rem; /* Tamaño de introducción */
-  margin-bottom: 1rem; /* Espacio inferior */
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
   color: var(--color-texto);
 }
 
 .about__paragraph {
-  font-size: 1rem; /* Tamaño de párrafo */
-  line-height: 1.6; /* Altura de línea para mejor lectura */
+  font-size: 1rem;
+  line-height: 1.6;
   margin-bottom: 1rem;
   color: var(--color-texto);
 }
 
 .about strong {
-  color: var(--color-destacado); /* Destaca texto importante */
+  color: var(--color-destacado);
+}
+
+/* ---------- Botón de Descarga CV (NUEVO) ---------- */
+.about__actions {
+  margin-top: 2rem;
+}
+
+.btn-cv {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 28px;
+  background-color: var(--color-hover-acento, #6200ea);
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: none;
+}
+
+.btn-cv:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  filter: brightness(1.1);
+}
+
+.btn-cv__icon {
+  font-size: 1.2rem;
+  /* Animación de rebote sutil */
+  animation: bounceDown 2s infinite;
+}
+
+@keyframes bounceDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
 }
 
 /* ---------- Imagen de la sección ---------- */
 .about__image {
-  flex: 1 1 350px; /* Crece y se reduce, ancho base 350px */
+  flex: 1 1 350px;
   display: flex;
-  justify-content: center; /* Centra la imagen horizontalmente */
+  justify-content: center;
 }
 
 .about__image img {
-  max-width: 100%; /* No excede el contenedor */
-  border-radius: 15px; /* Bordes redondeados */
-  box-shadow: 0 5px 15px var(--sombra); /* Sombra leve */
-  display: block; /* Evita espacios debajo de la imagen */
-  transition: transform 0.5s ease-in-out, box-shadow 0.3s ease; /* Animaciones suaves */
+  max-width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px var(--sombra);
+  display: block;
+  transition: transform 0.5s ease-in-out, box-shadow 0.3s ease;
 }
 
 /* ---------- Hover animado sobre la imagen ---------- */
 .about__image img:hover {
-  box-shadow: 0 8px 25px var(--sombra-hover); /* Sombra más pronunciada */
-  transform: scale(1.05); /* Leve aumento de tamaño */
-  animation: saludo 3s ease-in-out; /* Animación de movimiento */
+  box-shadow: 0 8px 25px var(--sombra-hover);
+  transform: scale(1.05);
+  animation: saludo 3s ease-in-out;
 }
 
-/* ---------- Keyframes para animación de saludo ---------- */
 @keyframes saludo {
   0%   { transform: rotate(0deg); }
-  25%  { transform: rotate(5deg); }  /* Giro leve positivo */
-  75%  { transform: rotate(-5deg); } /* Giro leve negativo */
-  100% { transform: rotate(0deg); }  /* Vuelve a posición original */
+  25%  { transform: rotate(5deg); }
+  75%  { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* ---------- Adaptación Móvil ---------- */
+@media (max-width: 768px) {
+  .about__actions {
+    display: flex;
+    justify-content: center; /* Centra el botón en móviles */
+  }
 }

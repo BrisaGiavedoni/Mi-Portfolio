@@ -1,72 +1,146 @@
 /* ========================================================= */
-/* ================= SKILLS.CSS  ====================== */
+/* ================= SKILLS.CSS (CON ANIMACIÓN) ============ */
 /* ========================================================= */
 
 /* ---------- Bloque principal de habilidades ---------- */
 .skills {
-    margin-top: 3rem; /* Separación superior */
-    padding: 1.5rem; /* Espacio interno */
-    border-radius: 10px; /* Bordes redondeados */
-    text-align: center; /* Centra el contenido */
+  margin-top: 4rem;
+  padding: 3rem 1.5rem;
+  border-radius: 20px;
+  text-align: center;
+  overflow: hidden; /* Evita que las animaciones causen scroll */
 }
 
 /* ---------- Título de la sección ---------- */
 .skills__title {
-    font-size: 1.8rem; /* Tamaño del título */
-    margin-bottom: 1rem; /* Espacio debajo */
-    color: var(--color-texto); /* Color principal del texto */
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+  color: var(--color-texto);
+  position: relative;
+  display: inline-block;
+}
+
+/* Subrayado decorativo para el título */
+.skills__title::after {
+  content: "";
+  width: 50%;
+  height: 3px;
+  background: var(--color-hover-acento, #007bff);
+  position: absolute;
+  bottom: -10px;
+  left: 25%;
+  border-radius: 2px;
 }
 
 /* ---------- Lista de habilidades ---------- */
 .skills__list {
-    display: flex; /* Flexbox para alinear items */
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-    flex-wrap: wrap; /* Permite que los items salten a otra línea */
-    gap: 2rem; /* Espacio entre items */
-    list-style: none; /* Quita bullets */
-    padding: 0;
-    margin: 0 auto; /* Centra la lista */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3rem; /* Más espacio para dejar que los iconos "floten" */
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 1000px;
 }
 
-/* ---------- Item individual de habilidad ---------- */
+/* ---------- Item individual con Animaciones ---------- */
 .skills__item {
-    display: flex;
-    flex-direction: column; /* Icono + texto en columna */
-    align-items: center; /* Centrado horizontal */
-    font-weight: 500; /* Negrita media */
-    color: var(--color-texto); /* Color del texto */
-    transition: transform 0.3s ease, color 0.3s ease; /* Animación suave */
-    outline: none; /* Sin borde por defecto */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 600;
+  color: var(--color-texto);
+  transition: color 0.3s ease;
+
+  /* Animación 1: Aparición (Entrada) */
+  animation: fadeInScale 0.8s cubic-bezier(0.4, 0, 0.2, 1) backwards,
+    float 5s ease-in-out infinite; /* Animación 2: Flotación */
 }
 
-/* Resalta item con foco visible (accesibilidad) */
-.skills__item:focus-visible {
-    outline: 2px solid var(--color-hover-acento); /* Borde al enfocar */
-    outline-offset: 4px; /* Separación del borde */
-    border-radius: 6px; /* Bordes redondeados */
+/* Retrasos escalonados para que no todos suban y bajen al mismo tiempo */
+.skills__item:nth-child(1) {
+  animation-delay: 0.1s, 0s;
+}
+.skills__item:nth-child(2) {
+  animation-delay: 0.2s, 0.5s;
+}
+.skills__item:nth-child(3) {
+  animation-delay: 0.3s, 1s;
+}
+.skills__item:nth-child(4) {
+  animation-delay: 0.4s, 1.5s;
+}
+.skills__item:nth-child(5) {
+  animation-delay: 0.5s, 2s;
+}
+.skills__item:nth-child(6) {
+  animation-delay: 0.6s, 2.5s;
+}
+.skills__item:nth-child(7) {
+  animation-delay: 0.7s, 3s;
 }
 
 /* ---------- Icono de la habilidad ---------- */
 .skills__icon {
-    width: 50px; /* Ancho del icono */
-    height: 50px; /* Alto del icono */
-    margin-bottom: 0.5rem; /* Espacio debajo */
-    transition: transform 0.3s ease, filter 0.3s ease; /* Animación suave */
+  width: 60px;
+  height: 60px;
+  margin-bottom: 0.8rem;
+  filter: grayscale(20%); /* Un toque sutil para el modo oscuro */
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* Modo claro: sin filtro en los iconos */
-body:has(#theme-toggle:checked) .skills__icon {
-    filter: none;
-}
-
-/* ---------- Efectos hover ---------- */
+/* ---------- Efectos al pasar el mouse (Hover) ---------- */
 .skills__item:hover {
-    transform: scale(1.1); /* Agranda el item */
-    color: var(--color-hover); /* Cambia color del texto */
+  color: var(--color-hover, #007bff);
+  animation-play-state: paused; /* Se queda quieto para que sea fácil clickear/leer */
+  cursor: default;
 }
 
 .skills__item:hover .skills__icon {
-    transform: scale(1.2); /* Agranda icono */
-    filter: drop-shadow(0 2px 6px var(--sombra-hover)); /* Sombra para destacar */
+  transform: scale(1.2) rotate(5deg); /* Crece y rota un poco */
+  filter: grayscale(0%)
+    drop-shadow(0 0 15px var(--sombra-hover, rgba(0, 0, 0, 0.2)));
+}
+
+/* ---------- KEYFRAMES (La magia del movimiento) ---------- */
+
+/* Animación de flotación suave */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px); /* Sube 15 píxeles */
+  }
+}
+
+/* Animación de entrada: escala y desvanece */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.5) translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* ---------- Ajustes para móviles ---------- */
+@media (max-width: 768px) {
+  .skills__list {
+    gap: 1.5rem;
+  }
+  .skills__icon {
+    width: 50px;
+    height: 50px;
+  }
+  @keyframes float {
+    50% {
+      transform: translateY(-8px);
+    } /* Flotación más corta en móvil */
+  }
 }
