@@ -52,45 +52,142 @@
 
 /* ---------- Card individual de proyecto ---------- */
 .project-card {
-    flex: 0 0 300px; /* Ancho fijo para scroll horizontal */
+    flex: 0 0 320px; /* Ancho fijo ligeramente mayor */
     display: flex;
-    flex-direction: column; /* Imagen + texto vertical */
-    overflow: hidden; /* Evita que se salga contenido */
-    border-radius: 12px; /* Bordes redondeados */
-    background: var(--color-primario); /* Fondo de la card */
-    box-shadow: 0 5px 15px var(--sombra); /* Sombra suave */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animaciones suaves */
-    cursor: pointer; /* Cursor puntero al pasar mouse */
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 16px;
+    background: var(--color-fondo);
+    border: 1px solid var(--sombra-hover);
+    box-shadow: 0 10px 30px -10px var(--sombra);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.4s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Efecto sutil de marco interno para más profundidad */
+.project-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.05);
+    pointer-events: none;
+    z-index: 10;
 }
 
 /* Hover de la card */
 .project-card:hover {
-    transform: scale(1.05); /* Agranda ligeramente */
-    box-shadow: 0 8px 25px var(--sombra-hover); /* Sombra más intensa */
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px -10px var(--sombra-hover);
+    border-color: var(--color-primario);
 }
 
 /* Enlace dentro de la card */
 .project-card a {
     display: flex;
-    flex-direction: column; /* Imagen + texto vertical */
-    height: 100%; /* Ocupa toda la card */
-    text-decoration: none; /* Quita subrayado */
-    color: var(--color-texto); /* Color del texto */
+    flex-direction: column;
+    height: 100%;
+    text-decoration: none;
+    color: var(--color-texto);
+    position: relative;
+    z-index: 1;
+}
+
+/* Contenedor de imagen cerrado para zoom dinámico sin afectar layout */
+.project-card__image-wrapper {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+    border-bottom: 3px solid var(--color-primario);
+}
+
+/* Degradado sobre la imagen para una integración limpia con la interfaz */
+.project-card__image-wrapper::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 50%;
+    background: linear-gradient(to top, var(--color-fondo) -5%, transparent 100%);
+    pointer-events: none;
+    z-index: 5;
 }
 
 /* Imagen del proyecto */
 .project-card__image {
-    width: 100%; /* Ocupa todo el ancho */
-    height: 200px; /* Alto fijo */
-    object-fit: cover; /* Ajusta imagen sin deformar */
-    border-radius: 12px 12px 0 0; /* Bordes superiores redondeados */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* Texto del proyecto */
-.project-card__text {
-    font-weight: 700; /* Negrita */
-    font-size: 1.1rem; /* Tamaño legible */
-    margin: 0.5rem; /* Espacio interno */
-    color: white; /* Color del texto sobre fondo oscuro */
-    text-align: center; /* Centra el texto */
+.project-card:hover .project-card__image {
+    transform: scale(1.1) rotate(1deg); /* Dinamismo sutil en la imagen */
+}
+
+/* Contenido del proyecto */
+.project-card__content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 1.5rem;
+    padding-top: 1rem;
+    text-align: left;
+    background: var(--color-fondo);
+    position: relative;
+    z-index: 2;
+}
+
+/* Título de la card */
+.project-card__title {
+    font-weight: 800;
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-primario);
+    letter-spacing: -0.5px;
+    transition: color 0.3s ease;
+}
+
+.project-card:hover .project-card__title {
+    color: var(--color-destacado);
+}
+
+/* Descripción de la card */
+.project-card__description {
+    font-size: 0.95rem;
+    color: var(--color-texto);
+    opacity: 0.85; /* Ligera opacidad para equilibrio visual */
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+/* Contenedor de etiquetas tecnológicas */
+.project-card__tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: auto;
+}
+
+/* Etiqueta individual tipografiada como 'pill' */
+.tech-tag {
+    background: transparent;
+    border: 1px solid var(--color-primario);
+    color: var(--color-primario);
+    padding: 0.35rem 0.85rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.project-card:hover .tech-tag {
+    background: var(--color-primario);
+    color: var(--color-secundario); /* Adaptable al modo claro/oscuro */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px var(--sombra);
 }
