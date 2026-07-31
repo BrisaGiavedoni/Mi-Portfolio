@@ -288,7 +288,7 @@ function App() {
               <img
                 className="art-image"
                 src={
-                 src={isCartoon ? "img/avatar-comic.png" : "img/avatarabout.png"}
+                 <img src={isCartoon ? "img/avatar-comic.png" : "img/avatarabout.png"} alt="Avatar" />
                 }
                 alt={
                   isCartoon ? "Retrato ilustrado de Brisa" : "Retrato de Brisa"
