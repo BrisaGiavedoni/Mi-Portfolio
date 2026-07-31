@@ -301,9 +301,13 @@ function App() {
               <img
                 className="art-image"
                 src={
+<<<<<<< HEAD
                   isCartoon
                     ? `${import.meta.env.BASE_URL}img/avatar-comic.png`
                     : `${import.meta.env.BASE_URL}img/avatarabout.png`
+=======
+                 <img src={isCartoon ? `${import.meta.env.BASE_URL}img/avatar-comic.png` : `${import.meta.env.BASE_URL}img/avatarabout.png`} alt="Avatar" />
+>>>>>>> 9fc46e6b6332dc52b61f8b4cbbc33f0137160157
                 }
                 alt={
                   isCartoon ? "Retrato ilustrado de Brisa" : "Retrato de Brisa"
