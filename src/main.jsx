@@ -288,7 +288,7 @@ function App() {
               <img
                 className="art-image"
                 src={
-                  isCartoon ? "/img/avatar-comic.png" : "/img/avatarabout.png"
+                 src={isCartoon ? "img/avatar-comic.png" : "img/avatarabout.png"}
                 }
                 alt={
                   isCartoon ? "Retrato ilustrado de Brisa" : "Retrato de Brisa"
@@ -356,7 +356,7 @@ function App() {
               >
                 <div className="project-image">
                   <img
-                    src={`/img/${project.image}`}
+                   src={`img/${project.image}`}
                     alt={`Vista previa de ${project.title}`}
                   />
                   <span className="project-arrow">
@@ -407,7 +407,7 @@ function App() {
               </p>
               <a
                 className="button outline"
-                href="/img/CV BRISA GIAVEDONI.pdf"
+                href="img/CV BRISA GIAVEDONI.pdf"
                 download="CV_Brisa_Giavedoni.pdf"
               >
                 Descargar CV <Download size={15} />
@@ -421,7 +421,7 @@ function App() {
                 key={skill}
                 style={{ "--delay": `${index * 90}ms` }}
               >
-                <img src={`/img/${image}`} alt="" />
+                <img src={`img/${image}`} alt="" />
                 <strong>{skill}</strong>
                 <span className="skill-mark">
                   <Code2 size={14} />
