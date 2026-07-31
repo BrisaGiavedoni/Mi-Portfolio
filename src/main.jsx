@@ -69,6 +69,7 @@ const projects = [
     tech: ["HTML", "CSS"],
   },
 ];
+
 const skills = [
   ["React.js", "react-logo.png"],
   ["JavaScript", "js.png"],
@@ -142,6 +143,7 @@ function App() {
   const [light, setLight] = useState(false);
   const [isCartoon, setIsCartoon] = useState(true);
   const [contactStatus, setContactStatus] = useState("idle");
+
   const filters = [
     "Todos",
     "Producto digital",
@@ -149,10 +151,12 @@ function App() {
     "E-commerce",
     "Landing page",
   ];
+
   const visibleProjects =
     filter === "Todos"
       ? projects
       : projects.filter((project) => project.type === filter);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) =>
@@ -165,6 +169,7 @@ function App() {
     document
       .querySelectorAll(".reveal")
       .forEach((element) => observer.observe(element));
+
     const sectionObserver = new IntersectionObserver(
       (entries) =>
         entries.forEach((entry) => {
@@ -182,11 +187,13 @@ function App() {
     document
       .querySelectorAll(".section-reveal")
       .forEach((section) => sectionObserver.observe(section));
+
     return () => {
       observer.disconnect();
       sectionObserver.disconnect();
     };
   }, [filter]);
+
   useEffect(() => {
     let frame;
     const updateProgress = () => {
@@ -199,13 +206,16 @@ function App() {
     frame = window.requestAnimationFrame(updateProgress);
     return () => window.cancelAnimationFrame(frame);
   }, []);
+
   useEffect(() => {
     const portraitTimer = window.setInterval(() => {
       setIsCartoon((mode) => !mode);
     }, 4200);
     return () => window.clearInterval(portraitTimer);
   }, []);
+
   const closeMenu = () => setMenuOpen(false);
+
   const handleContactSubmit = async (event) => {
     event.preventDefault();
     setContactStatus("sending");
@@ -223,6 +233,7 @@ function App() {
       setContactStatus("error");
     }
   };
+
   return (
     <div className={light ? "app light" : "app"}>
       <header className="topbar">
@@ -256,6 +267,7 @@ function App() {
           </button>
         </nav>
       </header>
+
       <main id="top">
         <section className="hero section-shell section-reveal">
           <div className="hero-copy reveal is-visible">
@@ -280,6 +292,7 @@ function App() {
               </a>
             </div>
           </div>
+
           <div className="hero-art reveal is-visible">
             <CodeRain />
             <div className="art-ring ring-one" />
@@ -288,7 +301,9 @@ function App() {
               <img
                 className="art-image"
                 src={
-                 <img src={isCartoon ? `${import.meta.env.BASE_URL}img/avatar-comic.png` : `${import.meta.env.BASE_URL}img/avatarabout.png`} alt="Avatar" />
+                  isCartoon
+                    ? `${import.meta.env.BASE_URL}img/avatar-comic.png`
+                    : `${import.meta.env.BASE_URL}img/avatarabout.png`
                 }
                 alt={
                   isCartoon ? "Retrato ilustrado de Brisa" : "Retrato de Brisa"
@@ -314,6 +329,7 @@ function App() {
             </button>
           </div>
         </section>
+
         <section
           id="work"
           className="work section-shell section-reveal"
@@ -333,6 +349,7 @@ function App() {
               encuentran para resolver algo real.
             </p>
           </div>
+
           <div className="filters" role="tablist">
             {filters.map((item) => (
               <button
@@ -344,6 +361,7 @@ function App() {
               </button>
             ))}
           </div>
+
           <div className="project-grid">
             {visibleProjects.map((project, index) => (
               <a
@@ -356,7 +374,7 @@ function App() {
               >
                 <div className="project-image">
                   <img
-                   src={`img/${project.image}`}
+                    src={`${import.meta.env.BASE_URL}img/${project.image}`}
                     alt={`Vista previa de ${project.title}`}
                   />
                   <span className="project-arrow">
@@ -379,6 +397,7 @@ function App() {
             ))}
           </div>
         </section>
+
         <section
           id="about"
           className="about section-shell section-reveal"
@@ -407,13 +426,14 @@ function App() {
               </p>
               <a
                 className="button outline"
-                href="img/CV BRISA GIAVEDONI.pdf"
+                href={`${import.meta.env.BASE_URL}img/CV BRISA GIAVEDONI.pdf`}
                 download="CV_Brisa_Giavedoni.pdf"
               >
                 Descargar CV <Download size={15} />
               </a>
             </div>
           </div>
+
           <div className="skills-list reveal">
             {skills.map(([skill, image], index) => (
               <div
@@ -421,7 +441,10 @@ function App() {
                 key={skill}
                 style={{ "--delay": `${index * 90}ms` }}
               >
-                <img src={`img/${image}`} alt="" />
+                <img
+                  src={`${import.meta.env.BASE_URL}img/${image}`}
+                  alt=""
+                />
                 <strong>{skill}</strong>
                 <span className="skill-mark">
                   <Code2 size={14} />
@@ -430,6 +453,7 @@ function App() {
             ))}
           </div>
         </section>
+
         <section
           id="contact"
           className="contact section-shell section-reveal"
@@ -447,6 +471,7 @@ function App() {
               <ArrowUpRight size={16} />
             </a>
           </div>
+
           <div className="contact-bottom reveal">
             <div>
               <p>
@@ -470,6 +495,7 @@ function App() {
                 </a>
               </div>
             </div>
+
             <form
               className="contact-form"
               action="https://formspree.io/f/xwpndpdn"
@@ -531,6 +557,7 @@ function App() {
           </div>
         </section>
       </main>
+
       <footer>
         <span>© 2025 BRISA GIAVEDONI</span>
         <span>HECHO CON REACT + CURIOSIDAD</span>
@@ -541,6 +568,7 @@ function App() {
     </div>
   );
 }
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <App />
